@@ -29,8 +29,7 @@ def insertDocuments(DATABASE = 'test',
     else:
         table.drop()
         table.insert(documents)
+  
+    print "Number of documents inserted (MongoDB):", table.count()
 
-    print "Done!"
-    print "Number of documents inserted:", table.count()
-
-insertDocuments(numberOfDocs = 15)
+##insertDocuments(numberOfDocs = 15)
