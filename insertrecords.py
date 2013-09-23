@@ -53,7 +53,7 @@ def calcage(datestr):
     dob = date(yyyy, mm, dd)
     today = date.today()
 
-    age = str(abs(today - dob).days/365)
+    age = abs(today - dob).days/365
 
     return age    
     
@@ -64,7 +64,7 @@ def insertRecords():
     mongoc = getCollection()
 
     sqlc.execute("DROP TABLE IF EXISTS patientinfo")
-    sqlc.execute("CREATE TABLE patientinfo (patientid text, firstname text, lastname text, dob text, age text)")
+    sqlc.execute("CREATE TABLE patientinfo (patientid text, firstname text, lastname text, dob text, age numeric)")
 
     allrecords = staging(mongoc)
     sqlc.executemany("INSERT INTO patientinfo VALUES (?, ?, ?, ?, ?)", allrecords)
