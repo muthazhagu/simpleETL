@@ -1,0 +1,12 @@
+1. Implement a data comparison module.
+Concatenate all char fields in source. 
+Concat all char fields in target. 
+Compare the hashes for this string, instead of doing a field by field comparison.
+
+Comparison module must allow user to input how much of the data is to be compared. 
+By default set this param to 100%.
+
+2. Implement a logging module to log data that is not the same between source and target.
+
+3. Fudge data to introduce failure conditions.
+
